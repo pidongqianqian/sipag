@@ -123,6 +123,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "sip-test"
+    },
+    "angular-jssip": {
+      "projectType": "library",
+      "root": "projects/angular-jssip",
+      "sourceRoot": "projects/angular-jssip/src",
+      "prefix": "pd",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/angular-jssip/tsconfig.lib.json",
+            "project": "projects/angular-jssip/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-jssip/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-jssip/src/test.ts",
+            "tsConfig": "projects/angular-jssip/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-jssip/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-jssip/tsconfig.lib.json",
+              "projects/angular-jssip/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "sip-test",
+  "cli": {
+    "analytics": false
+  }
 }
