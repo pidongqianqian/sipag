@@ -1,8 +1,9 @@
-<p>
+<div class="dialer">
   <!-- This button triggers the overlay and is it's origin -->
   <button (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
     {{isOpen ? "Close" : "Open"}}
   </button>
+  <pd-dailer></pd-dailer>
 
   <!-- This template displays the overlay content and is connected to the button -->
   <ng-template
@@ -10,10 +11,5 @@
     [cdkConnectedOverlayOrigin]="trigger"
     [cdkConnectedOverlayOpen]="isOpen"
   >
-    <ul class="example-list">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 4</li>
-    </ul>
   </ng-template>
-</p>
+</div>

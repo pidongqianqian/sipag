@@ -17,7 +17,6 @@
     ],
     "paths": {
       "angular-jssip": [
-        "dist/angular-jssip/angular-jssip",
         "dist/angular-jssip"
       ]
     }
