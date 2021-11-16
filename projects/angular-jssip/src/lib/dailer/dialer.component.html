@@ -1,0 +1,31 @@
+<div class="dialer-header">
+  <input *ngIf="!incoming && !isCalling" type="text" [(ngModel)]="callNumberStr">
+  <input *ngIf="!incoming && isCalling && isDtmf" type="text" [(ngModel)]="dtmfNumber">
+  <div class="info">
+    <div class="name">{{comingCallUserName}}</div>
+    <div>{{callTime}}</div>
+  </div>
+</div>
+<div class="dialer-body">
+  <pd-dailer-inputer *ngIf="!incoming && !isCalling" [(numberStr)]="callNumberStr"></pd-dailer-inputer>
+  <pd-dailer-inputer *ngIf="!incoming && isCalling && isDtmf" [(numberStr)]="dtmfNumber"></pd-dailer-inputer>
+  <pd-function-pad *ngIf="!incoming && isCalling && !isDtmf" (keyChange)="functionChange($event)"></pd-function-pad>
+</div>
+<div class="dialer-footer">
+  <div *ngIf="!incoming && !isCalling" fxLayout="row" fxLayoutGap="8px" class="dialer-line">
+    <div class="dialer-num" (click)="onTest(1)"></div>
+    <div class="dialer-num call" (click)="onCall()">call</div>
+    <div class="dialer-num" (click)="onTest(2)">delete</div>
+  </div>
+  <div *ngIf="!incoming && isCalling" fxLayout="row" fxLayoutGap="8px" class="dialer-line">
+    <div class="dialer-num"></div>
+    <div class="dialer-num hangUp" (click)="onHangUp()">hangUp</div>
+    <div class="dialer-num" *ngIf="isDtmf" (click)="isDtmf = !isDtmf">hide</div>
+    <div class="dialer-num" *ngIf="!isDtmf"></div>
+  </div>
+  <div *ngIf="incoming" fxLayout="row" fxLayoutGap="8px" class="dialer-line">
+    <div class="dialer-num hangUp" (click)="onHangUp()">hangUp</div>
+    <div class="dialer-num"></div>
+    <div class="dialer-num call" (click)="onAnswer()">answer</div>
+  </div>
+</div>

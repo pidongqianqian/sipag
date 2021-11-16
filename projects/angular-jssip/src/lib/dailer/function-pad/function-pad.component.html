@@ -1,0 +1,20 @@
+<div fxLayout="column" fxLayoutGap="8px" fxFlexFill class="dialer-box">
+  <div fxLayout="row" fxLayoutGap="8px" class="dialer-line">
+    <div class="dialer-num" (click)="onKeyChange('isMute')">
+      <span *ngIf="isMute">unmute</span>
+      <span *ngIf="!isMute">mute</span>
+    </div>
+    <div class="dialer-num" (click)="onKeyChange('isKeypadOn')">
+      <span *ngIf="!isKeypadOn">keypad</span>
+    </div>
+    <div class="dialer-num" (click)="onKeyChange('isHold')">
+      <span *ngIf="isHold">unhold</span>
+      <span *ngIf="!isHold">hold</span>
+    </div>
+  </div>
+  <!--  <div fxLayout="row" fxLayoutGap="8px" class="dialer-line">-->
+  <!--    <div class="dialer-num" (click)="onKeyChange('4')">4</div>-->
+  <!--    <div class="dialer-num" (click)="onKeyChange('5')">5</div>-->
+  <!--    <div class="dialer-num" (click)="onKeyChange('6')">6</div>-->
+  <!--  </div>-->
+</div>

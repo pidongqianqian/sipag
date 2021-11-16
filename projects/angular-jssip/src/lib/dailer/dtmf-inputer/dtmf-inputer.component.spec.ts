@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DailerComponent } from './dailer.component';
+import { DtmfInputerComponent } from './dtmf-inputer.component';
 
-describe('DailerComponent', () => {
-  let component: DailerComponent;
-  let fixture: ComponentFixture<DailerComponent>;
+describe('DtmfInputerComponent', () => {
+  let component: DtmfInputerComponent;
+  let fixture: ComponentFixture<DtmfInputerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DailerComponent ]
+      declarations: [ DtmfInputerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DailerComponent);
+    fixture = TestBed.createComponent(DtmfInputerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
